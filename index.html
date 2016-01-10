@@ -1,0 +1,63 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width; height=device-height; initial-scale=1.0; maximum-scale=1.0; user-scalable=false;"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+    <title>西瓜功夫</title>
+    <link href="images/style.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+	<script type="text/javascript" src="http://iphone.wo.com.cn/top/top.js"></script>
+    <div id="load_main">
+        <div id="loading_box">
+            <div id="loading_bar">
+                <div></div>
+            </div>
+        </div>
+    </div>
+    <div id="home_main">
+        <div class="start" onclick="location.replace('game.html#home');"></div>
+        <div class="help" onclick="location.replace('help.html#home');"></div>
+        <div class="home" onclick="location.href='http://gaomob.cn/game/home/index.html';"></div>
+    </div>
+	<script type="text/javascript" src="http://iphone.wo.com.cn/top/bottom.js"></script>
+</body>
+<script type="text/javascript">
+    var images = ['loadingbar.png', 'loadingbar.png', 'loadingbar.png', 'homebg.jpg', 'helpbg.jpg', 'gamebg.jpg', 'geng3.png', 'bullet.png', 'thief.png', 'firebg.png', 'sky.jpg', 'buildingline.png', 'buildings.png', 'wood.png', 'heart.png', 'numbers.png', 'bar.gif', 'peel.png', 'gameover.jpg', 'buttons.png'];
+    var loadingBarWidth = 152;
+
+    scrollTo(0, 0);
+    if (location.href.indexOf('#loaded') >= 0) {
+        location.replace('#');
+        finish();
+    }
+    else preLoad();
+    function preLoad() {
+        $('load_main').style.visibility = 'visible';
+        var loadingBar = $('loading_bar');
+        var amt = images.length;
+        var finished = 0;
+        var imgs = [];
+        var i;
+        for (i in images) {
+            var img = new Image();
+            img.src = 'images/' + images[i];
+            img.onload = img.onerror = finishOne;
+        }
+        function finishOne() {
+            finished++;
+            var p = finished / amt;
+            loadingBar.style.width = loadingBarWidth * p + 'px';
+            if (finished == amt) finish();
+        }
+    }
+    function finish() {
+        $('load_main').style.display = 'none';
+        $('home_main').style.display = 'block';
+    }
+    function $(id) { return document.getElementById(id); }
+</script>
+</html>

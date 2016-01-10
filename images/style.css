@@ -1,0 +1,280 @@
+﻿body { margin: 0px; -webkit-user-select: none; }
+
+#load_main, #home_main, #help_main, #main, #goBox { position: relative; width: 480px; height: 270px; }
+#load_main { visibility: hidden; }
+#loading_box { position: absolute; left: 50%; top: 50%; margin-left: -81px; margin-top: -10px; width: 162px; height: 20px; background: url(loadingbar.png) 0px -20px; }
+#loading_bar { position: absolute; background: url(loadingbar.png) 0px 0px; padding-left: 5px; width: 0px; height: 20px; }
+#loading_bar > div { position: absolute; right: -5px; background: url(loadingbar.png) -157px 0px; width: 5px; height: 20px; }
+
+#home_main { display: none; background-image: url(homebg.jpg); }
+
+#home_main > div { position: absolute; width: 140px; height: 42px; }
+
+#home_main .start { left: 262px; top: 168px; }
+#home_main .help { left: 187px; top: 220px; }
+#home_main .home { left: 337px; top: 220px; }
+
+#help_main { background-image: url(helpbg.jpg); }
+#help_main > div { position: absolute; width: 85px; height: 70px; right: 0px; bottom: 0px; }
+
+#main { display: none; background-image: url(gamebg.jpg); overflow: hidden; }
+
+@-webkit-keyframes 'geng3eat' {
+    0% { left: 0px; }
+    49.9999% { left: 0px; }
+    50% { left: -122px; }
+    100% { left: -122px; }
+}
+
+@-webkit-keyframes 'flash' {
+    0% { opacity: 0.8; }
+    50% { opacity: 0.3; }
+    100% { opacity: 0.8; }
+}
+
+@-webkit-keyframes 'bulletflash' {
+    0% { left: 0px; }
+    49.9999% { left: 0px; }
+    50% { left: -20px; }
+    100% { left: -20px; }
+}
+
+@-webkit-keyframes 'thieflr' {
+    0% { left: 0px; }
+    49.9999% { left: 0px; }
+    50% { left: -38px; }
+    100% { left: -38px; }
+}
+
+@-webkit-keyframes 'thieffire' {
+    0% { left: 0px; }
+    9.9999% { left: 0px; }
+    10% { left: -39px; }
+    19.9999% { left: -39px; }
+    20% { left: -78px; }
+    29.9999% { left: -78px; }
+    30% { left: -117px; }
+    39.9999% { left: -117px; }
+    40% { left: -156px; }
+    49.9999% { left: -156px; }
+    50% { left: -195px; }
+    59.9999% { left: -195px; }
+    60% { left: -156px; }
+    69.9999% { left: -156px; }
+    70% { left: -117px; }
+    79.9999% { left: -117px; }
+    80% { left: -156px; }
+    89.9999% { left: -156px; }
+    90% { left: -195px; }
+    100% { left: -195px; }
+}
+
+@-webkit-keyframes 'firebg' {
+    0% { left: 0px; }
+    49.9999% { left: 0px; }
+    50% { left: -90px; }
+    100% { left: -90px; }
+}
+
+@-webkit-keyframes 'watch' {
+    0% { left: 0px; }
+    49.9999% { left: 0px; }
+    50% { left: -48px; }
+    100% { left: -48px; }
+}
+
+@-webkit-keyframes 'shock' {
+    0% { margin-bottom: -3px; }
+    10% { margin-bottom: 0px; margin-left: -44px; }
+    30% { margin-bottom: -3px; }
+    40% { margin-bottom: 0px; margin-left: -42px; }
+    50% { margin-bottom: -3px; }
+    80% { margin-bottom: 0px; margin-left: -44px; }
+    90% { margin-bottom: -3px; }
+    100% { margin-bottom: -3px; }
+}
+
+#geng3 { position: absolute; bottom: 0px; left: 50%; margin-left: -61px; width: 122px; height: 100px; overflow: hidden; }
+#geng3 > div { position: absolute; height: 100px; background-image: url(geng3.png); }
+
+#geng3.eat > div
+{
+    width: 244px;
+    background-position: -244px;
+	-webkit-animation-name: geng3eat;
+	-webkit-animation-duration: 0.2s;
+	-webkit-animation-iteration-count: infinite;
+}
+
+#geng3.hurt > div
+{
+    width: 122px;
+    background-position: -610px;
+	-webkit-animation-name: flash;
+	-webkit-animation-duration: 0.3s;
+	-webkit-animation-iteration-count: infinite;
+}
+
+#geng3.hold > div { width: 122px; background-position: 0px; }
+#geng3.throw > div { width: 122px; background-position: -122px; }
+#geng3.refuel > div { width: 122px; background-position: -488px; }
+
+#bullets > div { position: absolute; margin: -10px; width: 20px; height: 20px; overflow: hidden; }
+
+#bullets > div > div
+{
+    position: absolute;
+    width: 40px; height: 20px;
+    background-image: url(bullet.png);
+	-webkit-animation-name: bulletflash;
+	-webkit-animation-duration: 0.5s;
+	-webkit-animation-iteration-count: infinite;
+}
+
+#peels > img { position: absolute; left: -45px; width: 45px; height: 23px; margin-left: -23px; }
+#peels > .flash 
+{
+	-webkit-animation-name: flash;
+	-webkit-animation-duration: 0.3s;
+	-webkit-animation-iteration-count: infinite;
+}
+
+.thief { position: absolute; width: 90px; height: 96px; overflow: hidden; margin-left: -45px; }
+.thief > .firebg { }
+.thief > .thiefm { position: absolute; left: 45px; bottom: 0px; overflow: hidden; }
+.thief > .thiefm > div { position: absolute; background-image: url(thief.png); }
+
+.thief.left > .thiefm, .thief.right > .thiefm { margin-left: -19px; width: 38px; height: 47px; }
+.thief.jumpleft > .thiefm, .thief.jumpright > .thiefm { margin-left: -27px; width: 54px; height: 44px; }
+
+.thief.watch > .thiefm { margin-left: -24px; width: 48px; height: 44px; }
+
+.thief.left > .thiefm > div
+{
+    width: 76px; height: 47px;
+    background-position: 0px -44px;
+	-webkit-animation-name: thieflr;
+	-webkit-animation-duration: 0.8s;
+	-webkit-animation-iteration-count: infinite;
+}
+
+.thief.right > .thiefm > div
+{
+    width: 76px; height: 47px;
+    background-position: -76px -44px;
+	-webkit-animation-name: thieflr;
+	-webkit-animation-duration: 0.8s;
+	-webkit-animation-iteration-count: infinite;
+}
+
+.thief.jumpleft > .thiefm > div
+{
+    width: 54px; height: 44px;
+    background-position: 0px 0px;    
+}
+
+.thief.jumpright > .thiefm > div
+{
+    width: 54px; height: 44px;
+    background-position: -54px 0px;
+}
+
+.thief.watch > .thiefm > div
+{
+    width: 96px; height: 44px;
+    background-position: -108px 0px;
+	-webkit-animation-name: watch;
+	-webkit-animation-duration: 0.5s;
+	-webkit-animation-iteration-count: infinite;
+}
+
+.thief.fire > .firebg
+{
+    position: absolute;
+    width: 180px; height: 96px;
+    background-image: url(firebg.png);
+	-webkit-animation-name: firebg;
+	-webkit-animation-duration: 0.5s;
+	-webkit-animation-iteration-count: infinite;
+}
+
+.thief.fire > .thiefm { margin-left: -20px; width: 39px; height: 38px; }
+
+.thief.fire > .thiefm > div
+{
+    left: -234px;
+    width: 273px; height: 38px;
+    background-position: 0px -91px;
+	-webkit-animation-name: thieffire;
+	-webkit-animation-duration: 2s;
+	-webkit-animation-iteration-count: 1;
+}
+
+.thief.hurt > .thiefm { margin-left: -23px; margin-bottom: 22px; width: 46px; height: 44px; }
+.thief.hurt > .thiefm > div { width: 46px; height: 44px; background-position: -152px -44px; }
+
+.thief.hurtland > .thiefm, .thief.die > .thiefm { margin-left: -19px; width: 38px; height: 44px; }
+.thief.hurtland > .thiefm > div, .thief.die > .thiefm > div { width: 38px; height: 44px; background-position: -198px -44px; }
+
+.thief.die > .thiefm
+{
+	-webkit-animation-name: flash;
+	-webkit-animation-duration: 0.3s;
+	-webkit-animation-iteration-count: infinite;
+}
+
+#sky { position: absolute; width: 480px; height: 270px; background: url(sky.jpg) no-repeat; }
+#buildingsholder > div { position: absolute; width: 480px; height: 270px; background: url(buildingline.png) no-repeat; }
+
+#buildingsholder > div > .b0, #buildingsholder > div > .b1, #buildingsholder > div > .b2 { position: absolute; background-image: url(buildings.png); bottom: 145px; margin-left: -43px; margin-bottom: -3px; width: 85px; height: 50px; }
+.b0 { background-position: 0px; }
+.b1 { background-position: -85px; }
+.b2 { background-position: -170px; }
+
+#buildingsholder > div > .shock
+{
+	-webkit-animation-name: shock;
+	-webkit-animation-duration: 1s;
+	-webkit-animation-iteration-count: infinite;
+	-webkit-animation-timing-function: ease;
+}
+
+.stagex, #peels, #hhold { position: absolute; width: 480px; height: 270px; }
+#stage { position: absolute; width: 480px; height: 270px; background: url(wood.png) repeat-x 0px 107px; }
+
+#hhold > div { position: absolute; margin-left: -12px; margin-bottom: -10px; width: 23px; height: 19px; background-image: url(heart.png); }
+
+#scorebox { position: absolute; left: 185px; top: 13px; height: 13px; }
+#scorebox > div { float: left; height: 13px; background-image: url(numbers.png); }
+
+.n0 { width: 11px; background-position: 0px; }
+.n1 { width: 7px; background-position: -11px; }
+.n2 { width: 10px; background-position: -19px; }
+.n3 { width: 10px; background-position: -29px; }
+.n4 { width: 10px; background-position: -39px; }
+.n5 { width: 10px; background-position: -49px; }
+.n6 { width: 10px; background-position: -59px; }
+.n7 { width: 9px; background-position: -69px; }
+.n8 { width: 10px; background-position: -78px; }
+.n9 { width: 10px; background-position: -88px; }
+
+#hpbar { position: absolute; right: 21px; top: 13px; width: 114px; height: 11px; -webkit-border-radius: 5px; background-image: url(bar.gif); }
+#backBt { position: absolute; width: 45px; height: 30px; }
+
+/*peel url(peel.png);*/
+
+#goBox { display: none; background-image: url(gameover.jpg); }
+#goBox.win { background-position: 0px 0px; }
+#goBox.lose { background-position: 0px -270px; }
+
+#goBox > div { position: absolute; width: 140px; height: 42px; }
+
+#againBt { left: 210px; top: 85px; }
+#homeBt { left: 210px; top: 161px; }
+
+#buttons { position: absolute; bottom: 25px;width: 480px; }
+#buttons > div { width: 60px; height: 60px; opacity: 0.8; background-image: url(buttons.png); }
+
+#leftBt { float: left; margin-left: 25px; background-position: 0px; }
+#rightBt { float: left; margin-left: 10px; background-position: -60px; }
+#throwBt { float: right; margin-right: 25px; background-position: -120px; }
